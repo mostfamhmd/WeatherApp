@@ -5,29 +5,17 @@ import 'package:weather/Model/weather_model.dart';
 
 class WeatherServices {
   Future<WeatherModel?> getWeather({required String cityName}) async {
-    WeatherModel? weather;
-    try {
-      // ignore: non_constant_identifier_names
-      String BaseUrl = "http://api.weatherapi.com/v1";
-      // ignore: non_constant_identifier_names
-      String ApiKey = "45baa7cae04d4adf91a121808231808";
-      Uri url =
-          Uri.parse("$BaseUrl/current.json?key=$ApiKey&q=$cityName&aqi=yes");
-      http.Response response = await http.get(url);
-      Map<String, dynamic> data = jsonDecode(response.body);
-      var location = data["location"];
-      var current = data["current"];
-      var condition = data["current"]["condition"];
-      weather = WeatherModel(
-          cityCountry: location['country'],
-          cityName: location["name"],
-          cityDate: DateTime.parse(location["localtime"]),
-          cityTemp: current["temp_c"],
-          cityWeatherState: condition["text"],
-          cityWeatherIcon: condition["icon"]);
-    } catch (e) {
-      print(e);
+    String baseUrl = "http://api.weatherapi.com/v1";
+    String apiKey = "526891f9562a4016be1165504231810";
+    Uri url =
+        Uri.parse("$baseUrl/current.json?key=$apiKey&q=$cityName&aqi=yes");
+    http.Response response = await http.get(url);
+    if (response.statusCode == 400) {
+      var data = jsonDecode(response.body);
+      throw Exception(data['error']['message']);
     }
+    Map<String, dynamic> data = jsonDecode(response.body);
+    WeatherModel weather = WeatherModel.fromJson(data);
     return weather;
   }
 }

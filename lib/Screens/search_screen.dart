@@ -11,16 +11,15 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const TextComponent(
+        title: TextComponent(
           text: "Search a City",
-          fonts: "Roboto",
-          size: 23,
+          fontSize: 23,
           color: Colors.white,
         ),
       ),
       body: Align(
           child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
+        padding: EdgeInsets.symmetric(horizontal: 15),
         child: SearchField(cityName),
       )),
     );

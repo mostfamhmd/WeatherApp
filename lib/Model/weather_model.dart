@@ -13,4 +13,17 @@ class WeatherModel {
     required this.cityWeatherIcon,
     required this.cityCountry,
   });
+
+  factory WeatherModel.fromJson(dynamic data) {
+    var location = data["location"];
+    var current = data["current"];
+    var condition = data["current"]["condition"];
+    return WeatherModel(
+        cityCountry: location['country'],
+        cityName: location["name"],
+        cityDate: DateTime.now(),
+        cityTemp: current["temp_c"],
+        cityWeatherState: condition["text"],
+        cityWeatherIcon: condition["icon"]);
+  }
 }

@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:weather/Providers/weather_provider.dart';
-
-import 'Screens/home_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:weather/Feature/Home/data/WeatherCubit/weather_cubit.dart';
+import 'Feature/Home/Presentation/View/home_screen.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-    create: (context) {
-      return WeatherProvider();
-    },
-    child: const MyApp(),
-  ));
+  runApp(
+    BlocProvider(
+      create: (context) => WeatherCubit(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.blue),
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+    return ScreenUtilInit(
+      splitScreenMode: true,
+      designSize: Size(
+          MediaQuery.sizeOf(context).width, MediaQuery.sizeOf(context).height),
+      child: MaterialApp(
+        theme: ThemeData(primarySwatch: Colors.blue),
+        debugShowCheckedModeBanner: false,
+        home: const HomeScreen(),
+      ),
     );
   }
 }

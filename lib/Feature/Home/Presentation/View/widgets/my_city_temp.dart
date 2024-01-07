@@ -19,25 +19,18 @@ class MyCityTemp extends StatelessWidget {
         const Spacer(),
         Center(
           child: TextComponent(
-              text: weatherModel.cityName,
-              fonts: "Roboto",
-              color: Colors.black,
-              size: 30.sp),
+              text: weatherModel.cityName, color: Colors.black, size: 30.sp),
         ),
         Center(
           child: TextComponent(
               text:
                   "Updated at : ${weatherModel.cityDate.hour.toString()}:${weatherModel.cityDate.minute.toString()}",
-              fonts: "Roboto",
               color: Colors.black,
               size: 15.sp),
         ),
         Center(
           child: TextComponent(
-              text: weatherModel.cityCountry,
-              fonts: "Roboto",
-              color: Colors.black,
-              size: 20.sp),
+              text: weatherModel.cityCountry, color: Colors.black, size: 20.sp),
         ),
         const Spacer(),
         Row(
@@ -50,7 +43,6 @@ class MyCityTemp extends StatelessWidget {
             ),
             TextComponent(
                 text: "${weatherModel.cityTemp}",
-                fonts: "Roboto",
                 color: Colors.black,
                 size: 30.sp),
           ],
@@ -62,13 +54,9 @@ class MyCityTemp extends StatelessWidget {
             Column(
               children: [
                 TextComponent(
-                    text: "Max Temp",
-                    fonts: "Roboto",
-                    color: Colors.black,
-                    size: 18.sp),
+                    text: "Max Temp", color: Colors.black, size: 18.sp),
                 TextComponent(
                     text: "${weatherModel.cityMaxTemp}",
-                    fonts: "Roboto",
                     color: Colors.black,
                     size: 15.sp)
               ],
@@ -76,13 +64,9 @@ class MyCityTemp extends StatelessWidget {
             Column(
               children: [
                 TextComponent(
-                    text: "Min Temp",
-                    fonts: "Roboto",
-                    color: Colors.black,
-                    size: 18.sp),
+                    text: "Min Temp", color: Colors.black, size: 18.sp),
                 TextComponent(
                     text: "${weatherModel.cityMinTemp}",
-                    fonts: "Roboto",
                     color: Colors.black,
                     size: 15.sp)
               ],
@@ -93,7 +77,6 @@ class MyCityTemp extends StatelessWidget {
         Center(
           child: TextComponent(
               text: weatherModel.cityWeatherState,
-              fonts: "Roboto",
               color: Colors.black,
               size: 30.sp),
         ),

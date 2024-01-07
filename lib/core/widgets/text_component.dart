@@ -1,17 +1,13 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class TextComponent extends StatelessWidget {
   const TextComponent(
-      {Key? key,
-      required this.text,
-      required this.fonts,
-      required this.color,
-      required this.size})
+      {Key? key, required this.text, required this.color, required this.size})
       : super(key: key);
 
   final String text;
-  final String fonts;
   final Color color;
   final double size;
 
@@ -19,7 +15,8 @@ class TextComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: GoogleFonts.getFont(fonts).copyWith(
+      style: TextStyle(
+        fontFamily: "Roboto",
         color: color,
         fontSize: size,
       ),

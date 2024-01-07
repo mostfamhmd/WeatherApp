@@ -13,14 +13,10 @@ class NotFoundCity extends StatelessWidget {
         children: [
           TextComponent(
               text: "there is no weather 😞 start",
-              fonts: "Roboto",
               color: Colors.black,
               size: 25.sp),
           TextComponent(
-              text: "searching now 🔍",
-              fonts: "Roboto",
-              color: Colors.black,
-              size: 25.sp),
+              text: "searching now 🔍", color: Colors.black, size: 25.sp),
         ],
       ),
     );

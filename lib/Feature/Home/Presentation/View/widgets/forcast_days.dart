@@ -23,7 +23,6 @@ class ForCastDays extends StatelessWidget {
           ),
           TextComponent(
               text: weatherModelForcastDays.cityDate,
-              fonts: "Roboto",
               color: Colors.black,
               size: 20.sp),
           SizedBox(
@@ -40,14 +39,9 @@ class ForCastDays extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              TextComponent(
-                  text: "MaxTemp",
-                  fonts: "Roboto",
-                  color: Colors.black,
-                  size: 15.sp),
+              TextComponent(text: "MaxTemp", color: Colors.black, size: 15.sp),
               TextComponent(
                   text: "${weatherModelForcastDays.cityMaxTemp}",
-                  fonts: "Roboto",
                   color: Colors.black,
                   size: 15.sp),
             ],
@@ -58,14 +52,9 @@ class ForCastDays extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              TextComponent(
-                  text: "MinTemp",
-                  fonts: "Roboto",
-                  color: Colors.black,
-                  size: 15.sp),
+              TextComponent(text: "MinTemp", color: Colors.black, size: 15.sp),
               TextComponent(
                   text: "${weatherModelForcastDays.cityMinTemp}",
-                  fonts: "Roboto",
                   color: Colors.black,
                   size: 15.sp),
             ],
@@ -75,7 +64,6 @@ class ForCastDays extends StatelessWidget {
           ),
           TextComponent(
               text: weatherModelForcastDays.cityWeatherState,
-              fonts: "Roboto",
               color: Colors.black,
               size: 18.sp),
         ],

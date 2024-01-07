@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weather/Feature/Search/View/widgets/search_field_component.dart';
 import 'package:weather/core/widgets/text_component.dart';
 
-// ignore: must_be_immutable
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
   @override
@@ -15,7 +14,6 @@ class SearchScreen extends StatelessWidget {
         elevation: 0,
         title: TextComponent(
           text: "Search a City",
-          fonts: "Roboto",
           size: 23.sp,
           color: Colors.white,
         ),

@@ -22,7 +22,6 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
         title: TextComponent(
           text: "Weather",
-          fonts: "Roboto",
           size: 23.sp,
           color: Colors.white,
         ),
@@ -72,7 +71,6 @@ class HomeScreen extends StatelessWidget {
               child: TextComponent(
                 text: state.errMessage,
                 color: Colors.black,
-                fonts: "Roboto",
                 size: 30.sp,
               ),
             );
